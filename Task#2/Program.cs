@@ -30,7 +30,10 @@
                     }
                     return weight;
                 }
-                throw new Exception("Не верно указан путь");
+                else
+                {
+                    throw new Exception("Не верно указан путь");
+                }
             }
             catch (Exception e)
             {

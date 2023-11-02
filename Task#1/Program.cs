@@ -31,7 +31,6 @@
                         if ((DateTime.Now - file.LastWriteTime) >= Time)
                         {
                             Remove($"Файл на удаление {file.Name}");
-                            continue;
                         }
                     }
                     var directories = dir.GetDirectories();
@@ -44,7 +43,10 @@
                         }
                     }
                 }
-                throw new Exception("Не верно указан путь");
+                else
+                {
+                    throw new Exception("Не верно указан путь");
+                }
 
             }
             catch (Exception ex)
